@@ -52,10 +52,7 @@ while guesses_used <= 50:
     guesses_used += 1
 
 # Make a list of States which the user didn't answer correctly
-missing_states = []
-for state in states_list:
-    if state not in correctly_guessed_states:
-        missing_states.append(state)
+missing_states = [state for state in states_list if state not in correctly_guessed_states]
 
 # Export missing_states to csv file
 states_to_review = pandas.DataFrame(missing_states)
